@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="8367b05d-c79d-4a47-9843-16dac83ae5bd"
+    Name="07f12d6a-4b8a-414a-a1b9-262e1446b603"
     Publisher="CN=Tanamo"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="8367b05d-c79d-4a47-9843-16dac83ae5bd" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="07f12d6a-4b8a-414a-a1b9-262e1446b603" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>LayoutTest</DisplayName>
+    <DisplayName>LayoutStack</DisplayName>
     <PublisherDisplayName>Tanamo</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="LayoutTest.App">
+      EntryPoint="LayoutStack.App">
       <uap:VisualElements
-        DisplayName="LayoutTest"
+        DisplayName="LayoutStack"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="LayoutTest"
+        Description="LayoutStack"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
