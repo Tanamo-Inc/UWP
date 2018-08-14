@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,6 +13,12 @@ namespace NavigationBar
         public MainPage()
         {
             this.InitializeComponent();
+
+            backBut.Visibility = Visibility.Collapsed;
+            MyFrame.Navigate(typeof(Home));
+            title.Text = "Home";
+            home_item.IsSelected = true;
+
         }
 
         // Navigation Button Method.
@@ -33,12 +27,37 @@ namespace NavigationBar
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
 
-   
+
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MyFrame.CanGoBack)
+            {
+                MyFrame.GoBack();
+                home_item.IsSelected = true;
+            }
+        }
+
+
         //Navigation Listener Method.
         private void nav_view_listener(object sender, SelectionChangedEventArgs e)
         {
-            if (share_item.IsSelected) { disp.Text = "Share"; }
-            else if (fav_tem.IsSelected) { disp.Text = "Favorites"; }
+            if (home_item.IsSelected)
+            {
+                backBut.Visibility = Visibility.Collapsed;
+                MyFrame.Navigate(typeof(Home));
+               title.Text = "Home";
+            }
+            else if (news_item.IsSelected)
+            {
+                backBut.Visibility = Visibility.Visible;
+                MyFrame.Navigate(typeof(News));
+                title.Text = "News";
+            }
+
+
+
+
         }
 
     }

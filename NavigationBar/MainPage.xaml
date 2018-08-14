@@ -21,7 +21,40 @@
                     FontFamily="Segoe MDL2 Assets"
                     Content="&#xE700;"
                     FontSize="36"
-                    Click="Nav_Button_Click" VerticalAlignment="Stretch" HorizontalAlignment="Left" Width="56" />
+                    Click="Nav_Button_Click" 
+                    VerticalAlignment="Stretch" 
+                    HorizontalAlignment="Left"
+                    Width="56" 
+                      RelativePanel.AlignLeftWithPanel="True"
+                    />
+
+            <Button Name="backBut"
+                    RelativePanel.RightOf="Nav_Button" 
+                    FontFamily="Segoe MDl2 Assets" 
+                    FontSize="36"
+                    Content="&#xE0C4;" 
+                    Click="BackButton_Click"
+                     />
+
+            <TextBlock Name="title"
+                       RelativePanel.RightOf="backBut"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Margin="20,5,0,0"/>
+
+            <Button Name="searcher" 
+                    RelativePanel.AlignRightWithPanel="True"
+                    FontFamily="Segoe MDL2 Assets"
+                    FontSize="36" 
+                    Content="&#xE1A3;" />
+
+            <TextBox Name="searchBox" 
+                     RelativePanel.LeftOf="searcher" 
+                     Height="48" 
+                     Width="200"
+                     FontSize="24"
+                     PlaceholderText="Search" />
+
 
         </RelativePanel>
 
@@ -38,15 +71,15 @@
                          Name="nav_view" 
                          SelectionChanged="nav_view_listener">
 
-                    <ListBoxItem Name="share_item">
+                    <ListBoxItem Name="home_item">
 
                         <StackPanel Orientation="Horizontal">
 
                             <TextBlock FontFamily="Segoe MDL2 Assets"
                                        FontSize="36"
-                                       Text="&#xE72D;" />
+                                       Text="&#xE80A;" />
 
-                            <TextBlock Text="Share"
+                            <TextBlock Text="Home"
                                        FontSize="24" 
                                        Margin="20,0,0,0" />
 
@@ -54,15 +87,15 @@
 
                     </ListBoxItem>
 
-                    <ListBoxItem Name="fav_tem">
+                    <ListBoxItem Name="news_item">
 
                         <StackPanel Orientation="Horizontal">
 
                             <TextBlock FontFamily="Segoe MDL2 Assets"
                                        FontSize="36" 
-                                       Text="&#xE734;" />
+                                       Text="&#xE128;" />
 
-                            <TextBlock Text="Favorites"
+                            <TextBlock Text="News"
                                        FontSize="24"
                                        Margin="20,0,0,0" />
 
@@ -75,7 +108,7 @@
             </SplitView.Pane>
 
             <SplitView.Content>
-                <TextBlock Name="disp" />
+                <Frame Name="MyFrame"></Frame>
             </SplitView.Content>
 
         </SplitView>
